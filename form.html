@@ -1,0 +1,48 @@
+<html>
+    <head>
+        <title>Login Page</title>
+        <style>
+            *{color:white;}
+            body{background: linear-gradient(#0f0c29,#302b63,#24243e); padding:20px}
+            input,button{color:black; border-radius: 10px;}
+            input,label,button{height: 25px;}
+        </style>
+        <script>
+            function nnv(){//not null validation
+                var username = document.getElementById("em101").value;
+                var password = document.getElementById("pwd101").value;
+                if(username===""){
+                    document.getElementById("nnv").innerHTML="Email Id field cannot be left empty!";
+                    event.preventDefault();
+                }
+                else if(password===""){
+                    document.getElementById("nnv").innerHTML="Password field cannot be left empty!";
+                    event.preventDefault();
+                }
+            }
+            document.addEventListener("DOMContentLoaded",function(){
+                const url = new URLSearchParams(window.location.search);
+                const error = url.get('error');
+                if(error){
+                    document.getElementById("nnv").innerHTML="Invalid email id or password!";
+                }
+            })
+        </script>
+    </head>
+    <body>
+        <h1 style="font-size: 48px;">Welcome To The Login Page</h1>
+        <form action="main.php" method="post">
+        <div style="display: inline-block; border:solid; border-radius: 10px; padding:25px; background:rgba(255,255,255,0.5);">
+            <label for="Email">Email ID: </label>
+            <input type="text" name="Email" id="em101">
+            <br><br>
+            <label for="Password">Password: </label>
+            <input type="password" name="Password" id="pwd101">
+            <br><br>
+            <center><button type="submit" onclick="nnv()">Submit</button></center>
+            <br>
+            <div id="nnv"></div>
+        </div>
+        </form>
+    </body>
+</html>

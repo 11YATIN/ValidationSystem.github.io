@@ -1,0 +1,6 @@
+yatinsan@phpcoder.com:abc@123
+hermione@phpcoder.com:granger@hogwarts
+sam@phpcoder.com:mds@32
+alice@phpcoder.com:acile
+ron@phpcoder.com:roncis
+
